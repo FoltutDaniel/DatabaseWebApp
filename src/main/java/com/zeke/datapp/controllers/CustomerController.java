@@ -1,4 +1,4 @@
-package com.zeke.controllers;
+package com.zeke.datapp.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -19,7 +19,7 @@
 		<servlet-name>TestDbServlet</servlet-name>
 		<display-name>TestDbServlet</display-name>
 		<description></description>
-		<servlet-class>com.zeke.testdb.TestDbServlet</servlet-class>
+		<servlet-class>com.zeke.datapp.testdb.TestDbServlet</servlet-class>
 	</servlet>
 	
 	

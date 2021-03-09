@@ -1,4 +1,4 @@
-package com.zeke.testdb;
+package com.zeke.datapp.testdb;
 
 import java.io.IOException;
 import java.io.PrintWriter;

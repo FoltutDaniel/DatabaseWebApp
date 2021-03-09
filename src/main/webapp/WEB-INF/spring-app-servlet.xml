@@ -35,7 +35,7 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource" />
-		<property name="packagesToScan" value="com.zeke.springdemo.entity" />
+		<property name="packagesToScan" value="com.zeke.datapp.entity" />
 		<property name="hibernateProperties">
 		   <props>
 		      <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
@@ -58,7 +58,7 @@
 	<!-- Add support for reading web resources: css, images, js, etc ... -->
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 	<!-- Step 3: Add support for component scanning -->
-	<context:component-scan base-package="com.zeke.controllers" />
+	<context:component-scan base-package="com.zeke.datapp.controllers" />
 
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
