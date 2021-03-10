@@ -59,6 +59,9 @@
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 	<!-- Step 3: Add support for component scanning -->
 	<context:component-scan base-package="com.zeke.datapp.controllers" />
+	<context:component-scan base-package="com.zeke.datapp.entity" />
+	<context:component-scan base-package="com.zeke.datapp.dao" />
+
 
 	<!-- Step 4: Add support for conversion, formatting and validation support -->
 	<mvc:annotation-driven/>
