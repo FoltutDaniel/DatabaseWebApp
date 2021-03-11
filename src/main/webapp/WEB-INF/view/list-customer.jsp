@@ -1,40 +1,75 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<title>Insert title here</title>
+	<title>List Customers</title>
+	
+	<!-- reference our style sheet -->
+	<link type="text/css"
+			rel="stylesheet"
+			href="${pageContext.request.contextPath}/resources/css/style.css">
+
 </head>
+
 <body>
+
 	<div id="wrapper">
 		<div id="header">
-			<h2>CRM - CUSTOMER RELATIONSHIP MANAGER</h2>
+			<h2>CRM - Customer Relationship Manager</h2>
 		</div>
 	</div>
 	
 	<div id="container">
+	
 		<div id="content">
+			<input id="button" type="button" value="Add Customer"
+				onclick="window.location.href='showFromForAdd';return false;">
 		
-				<table>
+			<!--  add our html table here -->
+		
+			<table>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Action</th>
+				</tr>
+				
+				<!-- loop over and print our customers -->
+				<c:forEach var="tempCustomer" items="${customers}">
+					
+					<!-- construct an "update" link with customer id -->
+					<c:url var="updateLink" value="/customer/showFormForUpdate">
+						<c:param name="customerId" value="$tempCustomer.id"/>
+					</c:url>
 					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
+						<td> ${tempCustomer.firstName} </td>
+						<td> ${tempCustomer.lastName} </td>
+						<td> ${tempCustomer.email} </td>
+						<td> <a href="${updateLink}">Update</a>
 					</tr>
-					<!-- loop over and print our customers -->
-					<c:forEach var="tempCustomer" items="${customers}">
-						<span>${tempCustomer.lastName}</span>
-						<tr>
-							<td><c:out value="${tempCustomer.firstName}"/> </td>
-							<td> ${tempCustomer.lastName} </td>
-							<td> ${tempCustomer.email} </td>
-						</tr>
-					</c:forEach>
-				</table>
-		
-			</div>
+				
+				</c:forEach>
+						
+			</table>
+				
 		</div>
+	
 	</div>
+	
+
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+

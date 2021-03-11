@@ -1,11 +1,10 @@
-package com.zeke.datapp.dao;
+package com.zeke.datapp.service;
 
 import java.util.List;
 
 import com.zeke.datapp.entity.Customer;
 
-public interface CustomerDAO {
-
+public interface CustomerService {
 
 	public List<Customer> getCustomers();
 
